@@ -18,9 +18,21 @@ def remove_strawberry(contacts)
   contacts.each do |name, attributes|
     attributes.each do |att, values|
       if att == :favorite_ice_cream_flavors
-        att.shift
+        att.delete("strawberry")
       end
     end
   end
   contacts
 end
+
+def remove_strawberry(contacts)
+  contacts.each do |name, attributes|
+    attributes.each do |att, values|
+      if att == :favorite_ice_cream_flavors
+        values.delete("strawberry")
+        puts contacts
+      end
+    end
+  end
+end
+
